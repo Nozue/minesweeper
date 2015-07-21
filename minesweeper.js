@@ -150,8 +150,6 @@ function clickPass(){
         clickedBs[(clickedBs.length)] = [clickedX, clickedY, numOfBombsSurrouding];
 
         drawCanvas();
-
-        console.log(numOfBombsSurrouding);
 }
 
     
