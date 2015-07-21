@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script type="text/javascript" src="minesweeper.js"></script>
+        <script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array();
+			function preload(){
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image();
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"mine.png",
+				"flag.png",
+				"square.png",
+                "empty.png"
+			)
+		//--><!]]>
+        
+        </script>
+    </head>
+    <body>
+            <!--<div>
+                <h2>
+                    <span>Your time:</span>
+                    <span class="timer">0</span>
+                </h2>
+            </div>
+            <div id="controls">
+                <span>Level:</span>
+                <select class="level">
+                    <option value="easy">Easy</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <button class="newGame" type="button">New game</button>
+            </div>-->
+        <div id="gameCanvas" class="minesweeper">
+            <canvas id="gCanvas" width="800" height="800"></canvas>
+        </div>
+    </body>
+
+</html>
