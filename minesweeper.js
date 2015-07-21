@@ -133,7 +133,8 @@ function checkBomb(i,x,y){
 }
 
 //Checking the boxes according to the possibilities around their corners
-function clickPass(){
+//Added y,y parameters to "clickPass" function. 
+function clickPass(x,y){
     var boxesToCheck = [[-1,-1],[0,1],[1,-1],[1,0],[1,1],[0,1],[-1,1],[-1,0]];
 
     for(var i in boxesToCheck){
