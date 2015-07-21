@@ -52,7 +52,7 @@ window.onclick = function(e){
     }
 
     if(clickedBomb == false){
-        clickPass();
+        clickPass(clickedX,clickedY);
     }
 }
 
