@@ -39,8 +39,7 @@ window.onclick = function(e){
 
     if(Math.floor(mX/s.width) < s.cols && Math.floor(mY/s.height) < s.rows){
         clickedX = Math.floor(mX/s.width);
-        clickedY = Math.floor(mY/s.height);
-        console.log(clickedX + "," + clickedY); 
+        clickedY = Math.floor(mY/s.height); 
     }
 
 
@@ -139,7 +138,7 @@ function clickPass(x,y){
 
     for(var i in boxesToCheck){
         for(var n=0; n<10;n++){
-            if(checkBomb(n, x + boxesToCheck[i][0], y + boxesToCheck[i][1])==true){
+            if(checkBomb(n, clickedX + boxesToCheck[i][0], clickedY + boxesToCheck[i][1])==true){
                 numOfBombsSurrouding++;
             }
         }
@@ -148,11 +147,11 @@ function clickPass(x,y){
     //if a box is clicked, we will add that box to an array of boxes that have been clicked.
     //And we will re-draw the canvas with new images
         //Give starting value of the bomb that was clicked
-        clickedBs[(clickedBs.length)] = [x, y, numOfBombsSurrouding];
         //When a user clicks a square with zero bomns surrounding it, it ignites a
         //chain reaction type thing, in which it function "clickPass" is automatically run
-        //in all the squares around it 
-        
+        //in all the squares around it
+        clickedBs[(clickedBs.length)] = [x, y, numOfBombsSurrouding];
+         
         if(numOfBombsSurrouding == 0) {
             for(i in boxesToCheck){
                 if (x + boxesToCheck[i][0] >= 0 && x + boxesToCheck[i][1] <= 9 && y + boxesToCheck[i][1] >= 0 && y + boxesToCheck[i][1] <= 9) {
@@ -160,6 +159,7 @@ function clickPass(x,y){
                    var y1 = y + boxesToCheck[i][1];
                    
                    var alreadyClicked = false;
+                   
                    for(n in clickedBs){
                        if (clickedBs[n][0] == x1 && clickedBs[n][1] == y1) {
                            alreadyClicked = true;
