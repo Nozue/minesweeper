@@ -17,6 +17,7 @@ var mY;
 var clickedX;
 var clickedY;
 var numOfBombsSurrouding = 0;
+var newGameTest = 0;
 
 
 window.onload = function(){
@@ -70,8 +71,21 @@ function init(){
         bombs[j] = [
             Math.floor(Math.random()*10),
             Math.floor(Math.random()*10)]
-    } 
+    }
+    
+   newGameTest = 0; 
    drawCanvas();
+   timer();
+}
+
+var time = 0;
+function timer() {
+    setTimeout(function() {
+        var timerDiv = document.getElementById("timer");
+        time++;
+        timerDiv.innerHTML = time;
+        timer();
+    }, 1000);
 }
 
 function drawCanvas(){
@@ -176,9 +190,13 @@ function clickPass(x,y){
         drawCanvas();
 }
 
-    
-
-
 function lose(){
 
+}
+
+function newGame() {
+    bombs = [];
+    clickedBs = [];
+    time = 0;
+    init();
 }
